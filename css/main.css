@@ -14,6 +14,12 @@ img {
   display: block;
 }
 
+/*carousel*/
+.carousel-inner .carousel-item img .d-block .w-100 {
+  width: 70%;
+  height: 70%;
+}
+
 /*INNER*/
 .inner {
   width: 1100px;
@@ -25,11 +31,11 @@ img {
 .btn {
   width: 130px;
   padding: 10px;
-  border: 2px solid #333;
+  border: 2px solid #ffffffef;
   border-radius: 4px;
   box-sizing: border-box;
-  color: #333;
-  background-color: #333;
+  color: #ffffff;
+  background-color: #0090EC;
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -65,14 +71,14 @@ img {
   color: #FFF;
   background-color: #D9AA8A;
 }
-.btn.btn--white {
+/* .btn.btn--white {
   color: #FFF;
   border-color: #FFF;
 }
 .btn.btn--white:hover {
   color: #333;
   background-color: #FFF;
-}
+} */
 
 /*BACK TO POSITION*/
 .back-to-position {
@@ -100,7 +106,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 9;
-  background-color: #F6F5F0;
+  background-color: #ffffff;
   border-bottom: 1px solid #c8c8c8;
 }
 header > .inner {
@@ -108,11 +114,11 @@ header > .inner {
 }
 header .logo {
   height: 90px;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
+  margin: 70%;
 }
 
 header .sub-menu {
@@ -169,7 +175,7 @@ header .sub-menu .search input {
 }
 header .sub-menu .search input:focus {
   width: 190px;
-  border-color: #EA9926;
+  border-color: #0090EC;
 }
 header .sub-menu .search .material-icons {
   height: 24px;
@@ -197,7 +203,7 @@ header .main-menu .item .item__name {
 }
 header .main-menu .item:hover .item__name {
   background-color: #2C2A29;
-  color: #EA9926;
+  color: #0090EC;
   border-radius: 6px 6px 0 0;
 }
 header .main-menu .item .item__contents {
@@ -231,7 +237,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li {
   cursor: pointer;
 }
 header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
-  color: #EA9926;
+  color: #0090EC;
 }
 header .main-menu .item .item__contents .contents__texture {
   padding: 26px 0;
@@ -243,7 +249,7 @@ header .main-menu .item .item__contents .contents__texture h4 {
   font-weight: 900;
 }
 header .main-menu .item .item__contents .contents__texture p {
-  color: #EA9926;
+  color: #0090EC;
   margin: 4px 0 14px;
 }
 
