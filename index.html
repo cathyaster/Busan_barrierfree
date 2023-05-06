@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" placeholder="가고 싶은 여행지를 입력해 보세요."></script>
+
+<!-- Bootstrap JS 링크 -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XDdP5o7vcJwkUt6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!-- The Open Graph Protocal -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Heropy Coffee" />
-  <meta property="og:title" content="Heropy Coffee Landing" />
-  <meta property="og:description" content="헤로피커피는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
-  <meta property="og:image" content="./images/for_seo.jpg" />
-  <meta property="og:url" content="https://epic-darwin-271c77.netlify.app" />
+  
+  <!-- Font awesome-->
+  <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
+
   <!-- Twitter Cards -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:site" content="Heropy Coffeee" />
@@ -19,9 +24,10 @@
   <meta property="twitter:description" content="헤로피커피는 세계에서 가장 큰 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
   <meta property="twitter:image" content="./images/for_seo.jpg" />
   <meta property="twitter:url" content="https://epic-darwin-271c77.netlify.app" />
-  <title>Heropy Coffee</title>
+  <title>Busan Barrier free travel</title>
   <link rel="icon" href="./favicon.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
   <!--Google APIs-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="./css/main.css">
+
   <!-- Swiper.js -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
@@ -37,7 +44,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="./js/youtube.js"></script>
   <script defer src="./js/main.js"></script>
+  
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+  <!--카카오 API-->
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c35ed04c11d9da5aa2675a7bdaea0330&libraries=services,clusterer,drawing"></script>
 
 </head>
 <body>
@@ -53,7 +66,7 @@
           <a href="/signin">로그인</a>
         </li>
         <li>
-          <a href="http://127.0.0.1:5500/login/register.html">회원가입</a>
+          <a href="http://127.0.0.1:5500/Busan_barrierfree-main/login/register.html">회원가입</a>
           
         </li>
         <li>
@@ -75,39 +88,27 @@
           <div class="contents__menu">
             <ul class="inner">
               <li>
-                <h4>커피</h4>
+                <h4>관광정보</h4>
                 <ul>
-                  <li>헤로피커피 원두</li>
-                  <li>헤로피커피 비아</li>
-                  <li>헤로피커피 오리가미</li>
+                  <li>관광안내소</li>
+                  <li>부산관광지</li>
+                  <li>무장애관광지</li>
                 </ul>
               </li>
               <li>
-                <h4>에스프레소 음료</h4>
+                <h4>관광코스</h4>
                 <ul>
-                  <li>도피오</li>
-                  <li>에스프레소 마키아또</li>
-                  <li>아메리카노</li>
-                  <li>마키아또</li>
+                  <li>1일 코스</li>
+                  <li>1박2일 코스</li>
+                  <li>2박3일 코스</li>
                 </ul>
               </li>
               <li>
-                <h4>커피 이야기</h4>
+                <h4>여행 후기</h4>
                 <ul>
-                  <li>로스트 스팩트럼</li>
-                  <li>최상의 아라비카 원두</li>
-                  <li>한 잔의 커피가 완성되기까지</li>
-                  <li>클로버 커피 추출 시스템</li>
-                </ul>
-              </li>
-              <li>
-                <h4>최상의 커피를 즐기는 법</h4>
-                <ul>
-                  <li>커피 프레스</li>
-                  <li>푸어 오버</li>
-                  <li>아이스 푸어 오버</li>
-                  <li>커피 메이커</li>
-                  <li>리저브를 매장에서 다양하게 즐기는 법</li>
+                  <li>랜선여행 동영상</li>
+                  <li>팸투어 동영상</li>
+                  <li>팸투어 여행후기</li>
                 </ul>
               </li>
             </ul>
@@ -123,58 +124,27 @@
         </div>
       </li>
       <li class="item">
-        <div class="item__name">축제/공연</div>
+        <div class="item__name">교통정보</div>
         <div class="item__contents">
           <div class="contents__menu">
             <ul class="inner">
               <li>
-                <h4>음료</h4>
+                <h4>교통지원</h4>
                 <ul>
-                  <li>콜드 브루</li>
-                  <li>브루드 커피</li>
-                  <li>에스프레소</li>
-                  <li>프라푸치노</li>
-                  <li>블렌디드 음료</li>
-                  <li>헤로피커피 피지오</li>
+                  <li>장애인콜택시</li>
+                  <li>렌트카</li>
+                  <li>휠셰어</li>
+                  <li>전동휠체어 급속충전소</li>
+                  <li>저상버스</li>
                 </ul>
               </li>
               <li>
-                <h4>푸드</h4>
+                <h4>교통 이용안내</h4>
                 <ul>
-                  <li>베이커리</li>
-                  <li>케익</li>
-                  <li>샌드위치 & 샐러드</li>
-                  <li>따뜻한 푸드</li>
-                  <li>과일 & 요거트</li>
-                  <li>스낵 & 미니 디저트</li>
-                  <li>아이스크림</li>
-                </ul>
-              </li>
-              <li>
-                <h4>상품</h4>
-                <ul>
-                  <li>머그</li>
-                  <li>글라스</li>
-                  <li>플라스틱 텀블러</li>
-                  <li>스테인리스 텀블러</li>
-                  <li>보온병</li>
-                  <li>액세서리</li>
-                  <li>커피 용품</li>
-                  <li>패키지 티(티바나)</li>
-                </ul>
-              </li>
-              <li>
-                <h4>카드</h4>
-                <ul>
-                  <li>실물카드</li>
-                  <li>e-Gift 카드</li>
-                </ul>
-              </li>
-              <li>
-                <h4>메뉴 이야기</h4>
-                <ul>
-                  <li>콜드 브루</li>
-                  <li>티바나</li>
+                  <li>도시철도</li>
+                  <li>항공</li>
+                  <li>선박</li>
+                  <li>시티투어</li>
                 </ul>
               </li>
             </ul>
@@ -220,159 +190,49 @@
           </div>
         </div>
       </li>
-      <li class="item">
+      <li? class="item">
         <div class="item__name">숙박/음식점</div>
         <div class="item__contents">
           <div class="contents__menu">
             <ul class="inner">
               <li>
-                <h4>지역 사회 참여 활동</h4>
+                <h4>숙박</h4>
                 <ul>
-                  <li>회망배달 캠페인</li>
-                  <li>재능기부 카페 소식</li>
-                  <li>커뮤니티 스토어</li>
-                  <li>청년인재 양성</li>
-                  <li>우리 농산물 사랑 캠페인</li>
-                  <li>우리 문화 지키기</li>
+                  <li>관광지별</li>
+                  <li>구별</li>
                 </ul>
               </li>
               <li>
-                <h4>환경보호 활동</h4>
+                <h4>음식점</h4>
                 <ul>
-                  <li>환경 발자국 줄이기</li>
-                  <li>일회용 컵 없는 매장</li>
-                  <li>커피 원두 재활용</li>
-                </ul>
-              </li>
-              <li>
-                <h4>윤리 구매</h4>
-                <ul>
-                  <li>윤리적 원두 구매</li>
-                  <li>공정무역 인증</li>
-                  <li>커피 농가 지원 활동</li>
-                </ul>
-              </li>
-              <li>
-                <h4>글로벌 사회 공헌</h4>
-                <ul>
-                  <li>윤리경영 보고서</li>
-                  <li>헤로피커피 재단</li>
-                  <li>지구촌 봉사의 달</li>
+                  <li>관광지별</li>
+                  <li>역별</li>
                 </ul>
               </li>
             </ul>
           </div>
-          <div class="contents__texture">
+          <!-- <div class="contents__texture">
             <div class="inner">
               <h4>커피원두 재활용</h4>
               <p>헤로피커피 커피 원두를 재활용 해보세요.</p>
             </div>
-          </div>
+          </div> -->
         </div>
       </li>
-      <li class="item">
-        <div class="item__name">숙박/음식점</div>
-        <div class="item__contents">
-          <div class="contents__menu">
-            <ul class="inner">
-              <li>
-                <h4>마이 헤로피커피 리워즈</h4>
-                <ul>
-                  <li>마이 리워즈 소개</li>
-                  <li>등급 및 혜택</li>
-                  <li>헤로피커피 별</li>
-                  <li>자주하는 질문</li>
-                </ul>
-              </li>
-              <li>
-                <h4>헤로피커피 카드</h4>
-                <ul>
-                  <li>카드 소개</li>
-                  <li>카드 갤러리</li>
-                  <li>등록 및 조회</li>
-                  <li>충전 및 이용안내</li>
-                  <li>분실신고/환불신청</li>
-                  <li>자주하는 질문</li>
-                </ul>
-              </li>
-              <li>
-                <h4>카드 e-Gift</h4>
-                <ul>
-                  <li>카드 e-Gift 소개</li>
-                  <li>이용안내</li>
-                  <li>선물하기</li>
-                  <li>자주하는 질문</li>
-                </ul>
-              </li>
             </ul>
           </div>
-          <div class="contents__texture">
-            <div class="inner">
-              <h4>카드 등록하기</h4>
-              <p>카드 등록 후 리워즈 서비스를 누리고 사용내역도 조회해보세요.</p>
-            </div>
-          </div>
-        <!-- </div>
-      </li>
-      <li class="item">
-        <div class="item__name">숙박/음식점</div>
-        <div class="item__contents">
-          <div class="contents__menu">
-            <ul class="inner">
-              <li>
-                <h4>프로모션 & 이벤트</h4>
-                <ul>
-                  <li>전체</li>
-                  <li>카드</li>
-                  <li>마이 리워즈</li>
-                  <li>온라인</li>
-                  <li>2017 플래너</li>
-                </ul>
-              </li>
-              <li>
-                <h4>새소식</h4>
-                <ul>
-                  <li>전체</li>
-                  <li>상품 출시</li>
-                  <li>문화</li>
-                  <li>사회공헌</li>
-                  <li>카드출시</li>
-                </ul>
-              </li>
-              <li>
-                <h4>매장별 이벤트</h4>
-                <ul>
-                  <li>일반 매장</li>
-                  <li>신규 매장</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="contents__texture">
-            <div class="inner">
-              <h4>매장별 이벤트</h4>
-              <p>매장 이벤트 정보를 확인 하실 수 있습니다.</p>
-              <h4>소셜</h4>
-              <p>다양한 SNS 채널을 통해 커피를 만나보세요!</p>
-            </div>
-          </div>
-        </div>
-      </li> -->
     </ul>
   </div>
-  <!--BADGES-->
+  <!--QR_BADGES-->
   <div class="badges">
     <div class="badge">
-      <img src="/trip.png" alt="Badge" />
+      <img src="/Busan_barrierfree-main/trip.png" alt="Badge" />
     </div>
     <!-- <div class="badge">
       <img src="./images/badge2.jpg" alt="Badge" />
     </div> -->
   </div>
 </header>
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" placeholder="가고 싶은 여행지를 입력해 보세요."></script>
     
 <!-- Bootstrap 캐러셀 슬라이드 -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -383,13 +243,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/images/temple.jpg" class="d-block w-100" alt="...">
+      <img src="/Busan_barrierfree-main/images/temple.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/images/busan.jpg" class="d-block w-100" alt="...">
+      <img src="/Busan_barrierfree-main/images/busan.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/images/thebay.jpg" class="d-block w-100" alt="...">
+      <img src="/Busan_barrierfree-main/images/thebay.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -400,7 +260,38 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
+</div><br><br><br>
+<!--icon-->
+<!-- <div class="icon-menu"> 
+  <a href="#">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+  </a>
+  <a href="#">
+    <i class="fas fa-search"></i>
+    <span>Search</span>
+  </a>
+  <a href="#">
+    <i class="fas fa-envelope"></i>
+    <span>Messages</span>
+  </a>
+  <a href="#">
+    <i class="fas fa-bell"></i>
+    <span>Notifications</span>
+  </a>
+  <a href="#">
+    <i class="fas fa-user"></i>
+    <span>Profile</span>
+  </a>
+  <a href="#">
+    <i class="fas fa-cog"></i>
+    <span>Settings</span>
+  </a>
+  <a href="#">
+    <i class="fas fa-sign-out-alt"></i>
+    <span>Logout</span>
+  </a>
+</div> -->
 
 <!--VISUAL-->
 <!-- <section class="visual">
@@ -451,16 +342,37 @@
       </a>
     </div>
     <div class="inner__right">
-      <h2>커피 프로모션</h2>
+      <!-- <h2>게시판</h2> -->
       <div class="toggle-promotion">
-        <div class="material-icons">upload</div>
+        <!-- <div class="material-icons">upload</div> -->
       </div>
     </div>
   </div>
 </section>
 
+<!-- Board
+<div class="board-container">
+  <div class="board-list">
+    <h2>게시판 1</h2>
+    <ul>
+      <li><a href="http://localhost/freeboard/form.php">게시글 1</a></li>
+      <li><a href="#">게시글 2</a></li>
+      <li><a href="#">게시글 3</a></li>
+      <li><a href="#">게시글 4</a></li>
+    </ul>
+  </div>
+  <div class="board-list">
+    <h2>게시판 2</h2>
+    <ul>
+      <li><a href="#">게시글 1</a></li>
+      <li><a href="#">게시글 2</a></li>
+      <li><a href="#">게시글 3</a></li>
+      <li><a href="#">게시글 4</a></li>
+    </ul>
+  </div>
+</div> -->
 <!--PROMOTION-->
-<section class="promotion">
+<!-- <section class="promotion">
   <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -492,9 +404,34 @@
   <div class="swiper-button-next">
     <span class="material-icons">arrow_forward</span>
   </div>
-</section>
+</section> -->
 
-<!--REWARDS-->
+<!--API with kakao map-->
+<div style="display: flex;">
+<div id="map" style="flex-grow: 1;"></div>
+<!--API with busan api-->
+<div id="dataInfo" style="float: left;"></div>
+</div>
+<!-- <div id="roadview" style="width:100%;height:300px;"></div> -->
+
+<!--API with weather-->
+<!-- 모달 버튼 -->
+<button id="modal-button">부산 실시간 날씨 조회</button>
+
+<!-- 모달 -->
+<div id="weather-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>부산 날씨 정보</h2>
+    <div id="weather-icon">
+      <br><br>
+      <p><strong>기온:</strong> <span id="weather-temperature"></span></p>
+      <p><strong>습도:</strong> <span id="weather-humidity"></span></p>
+    </div>
+  </div>
+</div>
+<br><br><hr>
+<!-- 
 <section class="rewards">
   <div class="bg-left"></div>
   <div class="bg-right"></div>
@@ -504,9 +441,9 @@
       <div class="btn sign-in">로그인</div>
       <div class="btn gift">e-Gift 선물하기</div>
     </div>
-  </div>
-</section>
+  </div> -->
 
+  <h2><b>부산 홍보 영상</b></h2>
 <!--YOUTUBE VIDEO-->
 <section class="youtube">
   <div class="youtube__area">
@@ -514,15 +451,12 @@
   </div>
   <div class="youtube__cover"></div>
   <div class="inner">
-    <img src="./images/floating1.png" alt="Icon" class="floating1" />
-    <img src="./images/floating2.png" alt="Icon" class="floating2" />
   </div>
 </section>
 
 <!--SEASON PRODUCT-->
-<section class="season-product scroll-spy">
+<!-- <section class="season-product scroll-spy">
   <div class="inner">
-    <img src="./images/floating3.png" alt="Icon" class="floating3" />
     <img src="./images/season_product_image.png" alt="" class="product back-to-position to-right" />
     <div class="text-group">
       <img src="./images/season_product_text1.png" alt="" class="title back-to-position to-left delay-1" />
@@ -532,10 +466,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!--RESERVE COFFEE-->
-<section class="reserve-coffee scroll-spy">
+<!-- <section class="reserve-coffee scroll-spy">
   <div class="inner">
     <img src="./images/reserve_logo.png" alt="" class="reserve-logo back-to-position to-right" />
     <div class="text-group">
@@ -546,10 +480,10 @@
     </div>
     <img src="./images/reserve_image.png" alt="" class="product back-to-position to-left delay-3" />
   </div>
-</section>
+</section> -->
 
 <!--PICK YOUR FAVORITE-->
-<section class="pick-your-favorite scroll-spy">
+<!-- <section class="pick-your-favorite scroll-spy">
   <div class="inner">
     <div class="text-group">
       <img src="./images/favorite_text1.png" alt="" class="title back-to-position to-right" />
@@ -559,10 +493,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!--RESERVE STORE-->
-<section class="reserve-store">
+<!-- <section class="reserve-store">
   <div class="inner">
     <div class="medal">
       <div class="front">
@@ -576,10 +510,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!--FIND THE STORE-->
-<section class="find-store scroll-spy">
+<!-- <section class="find-store scroll-spy">
   <div class="inner">
     <img src="./images/find_store_texture1.png" alt="" class="texture1" />
     <img src="./images/find_store_texture2.png" alt="" class="texture2" />
@@ -593,7 +527,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!--Relative-->
 <section class="awards">

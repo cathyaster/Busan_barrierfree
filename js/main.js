@@ -182,3 +182,117 @@ spyEls.forEach(function (spyEl) {
  */
 const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();
+
+
+const result = async () => {
+  const response = await axios.get(
+    'https://apis.data.go.kr/B551011/KorWithService1/searchKeyword1?serviceKey=cU5naztFnlW7LmXTZhJAkm6LicTILQasUDFvBMgMVe3K1gTYi7ZsvvDoCrU9zolhJqDBeb0%2FBFXmJ7tQ5O2REQ%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&listYN=Y&arrange=A&keyword=%EB%B6%80%EC%82%B0&_type=json'
+  );
+  console.log('response 결과 : ', response.data.response.body.items.item);
+  const datainfo = response.data.response.body.items.item
+
+  return datainfo
+};
+
+result().then(datainfo => {
+  // 각 객체를 HTML tr 태그로 변환하여 새로운 배열 생성
+  const trList = datainfo.map(item => `
+    <tr>
+      <td>${item.title}</td>
+      <td>${item.addr1}</td>
+      <td>${item.tel}</td>
+      <td>${item.mapx}</td>
+      <td>${item.mapy}</td>
+    </tr>
+  `);
+  
+  // tr 태그 문자열 배열을 하나의 문자열로 합치기
+  const html = `
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>주소</th>
+          <th>전화번호</th>
+          <th>위도</th>
+          <th>경도</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${trList.join('')}
+      </tbody>
+    </table>
+  `;
+  
+  // 결과를 HTML 문서에 삽입
+  const tableContainer = document.querySelector('#dataInfo');
+  tableContainer.innerHTML = html;
+});
+result().then(datainfo => {
+  const mapContainer = document.getElementById('map');
+  const options = { 
+    center: new kakao.maps.LatLng(datainfo[0].mapy, datainfo[0].mapx),
+    level: 5
+    
+  };
+  const map = new kakao.maps.Map(mapContainer, options);
+  map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+
+  datainfo.forEach(item => {
+    const markerPosition = new kakao.maps.LatLng(item.mapy, item.mapx);
+
+    const marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    marker.setMap(map);
+  });
+
+  // mapContainer.appendChild(map);
+});
+
+//날씨
+const result2 = async () => {
+  const response = await axios.get(
+    `http://api.openweathermap.org/data/2.5/weather?q=Busan&appid=ad020481bfabee5be75fd5fcd20d4fc7`
+  );
+  console.log('response 결과 : ', response.data);
+  const weather = response.data;
+
+  return weather;
+};
+result2()
+  .then(data => {
+    console.log(data);
+
+    // 요소에 데이터 출력
+    // document.getElementById("weather-condition").textContent = data.weather[0].description;
+    document.getElementById("weather-temperature").textContent = `${(data.main.temp - 273.15).toFixed(2)} °C`; //Kelvin -> Celsius 단위 변환
+    document.getElementById("weather-humidity").textContent = `${data.main.humidity}%`;
+
+  // 아이콘 변경
+  const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+  document.getElementById("weather-icon").style.backgroundImage = `url('${iconUrl}')`;
+
+      // 모달 버튼 클릭시 모달 창 띄우기
+      const modalButton = document.getElementById("modal-button");
+      const modal = document.getElementById("weather-modal");
+      const closeBtn = document.getElementsByClassName("close")[0];
+  
+      modalButton.onclick = function() {
+        modal.style.display = "block";
+      }
+  
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+      }
+  
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    })
+.catch(error => {
+  console.error(error);
+});

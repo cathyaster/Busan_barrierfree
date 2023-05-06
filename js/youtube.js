@@ -12,11 +12,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function onYouTubePlayerAPIReady() {
   // <div id="player"></div>
   new YT.Player('player', {
-    videoId: 'Tdwetb0Mvyc', // 최초 재생할 유튜브 영상 ID
+    videoId: 'LFXHnUsX6pE', // 최초 재생할 유튜브 영상 ID
     playerVars: {
       autoplay: true, // 자동 재생 유무
       loop: true, // 반복 재생 유무
-      playlist: 'Tdwetb0Mvyc' // 반복 재생할 유튜브 영상 ID 목록
+      playlist: 'LFXHnUsX6pE' // 반복 재생할 유튜브 영상 ID 목록
     },
     events: {
       // 영상이 준비되었을 때,
@@ -26,3 +26,4 @@ function onYouTubePlayerAPIReady() {
     }
   })
 }
+// https://www.youtube.com/watch?v=LFXHnUsX6pE_channel=ImagineYourKorea

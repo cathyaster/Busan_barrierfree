@@ -1,3 +1,5 @@
+
+
 /*COMMON*/
 body {
   font-family: 'Nanum Gothic', sans-serif;
@@ -261,6 +263,72 @@ header .badges {
 
 }
 
+/*icon menu*/
+.icon-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  padding: 10px;
+  margin: 50px;
+  height: 180px;
+  border-radius: 8px;
+}
+
+.icon-menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.icon-menu a i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.icon-menu a:hover {
+  color: #0090EC;
+}
+
+/*notice*/
+.board-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px;
+}
+
+.board-list {
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.board-list h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.board-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.board-list li {
+  margin-bottom: 10px;
+}
+
+.board-list li a {
+  color: #333;
+  text-decoration: none;
+}
+
 header .badges .badge img {
   width: 50px;
   height: 50px;
@@ -273,7 +341,6 @@ header .badges .badge {
   box-shadow: 4px 4px 10px rgba(0,0,0,.15);
   cursor: pointer;
 }
-
 
 /*VISUAL*/
 .visual {
@@ -331,7 +398,7 @@ header .badges .badge {
 .notice .bg-left {
   width: 50%;
   height: 100%;
-  background-color: #333;
+  background-color: #0090EC;
   position: absolute;
   top: 0;
   left: 0;
@@ -350,7 +417,7 @@ header .badges .badge {
 }
 .notice .inner__left {
   width: 70%;
-  background-color: #333;
+  background-color: #0090EC;
   display: flex;
   align-items: center;
 }
@@ -404,6 +471,7 @@ header .badges .badge {
 .notice .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }
+
 /*PROMOTION*/
 .promotion {
   display: flex;
@@ -481,6 +549,86 @@ header .badges .badge {
 .promotion .swiper-button-prev::after,
 .promotion .swiper-button-next::after {
   display: none;
+}
+
+/*MAP*/
+#map {
+  position: relative;
+  width: 80%;
+  margin: 15px;
+}
+
+#map > div {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*weather*/
+#weather-icon {
+  width: 50px;
+  height: 50px;
+  background-image: url('https://openweathermap.org/img/w/04d.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+/* 모달 스타일 */
+.modal {
+  display: none; /* 모달 숨기기 */
+  position: fixed; /* 위치 고정 */
+  z-index: 1; /* 모달 위 다른 요소들 뒤로 배치 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 가능하게 */
+  background-color: rgba(0,0,0,0.4); /* 투명 검정색 배경 */
+  text-align: center;
+}
+
+#weather-icon p {
+  display: inline-block; /* 인라인 블록 요소로 변경 */
+  margin: 10px 20px; /* 여백 지정 */
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888888;
+  width: 80%;
+  max-width: 600px;
+  overflow-y: auto;
+  max-height: 400px; 
+}
+
+.close {
+  color: #333;
+  float: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #0090EC;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#weather-condition {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#weather-temperature,
+#weather-humidity {
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
 

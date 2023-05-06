@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms import PasswordField
 from wtforms.validators import DataRequired, EqualTo
-from Models import User #odels.py 가져옴
+from Models import User #Models.py 가져옴
 
 class RegisterForm(FlaskForm):
     userid = StringField('userid', validators=[DataRequired()])
