@@ -2,7 +2,7 @@
 
 ####  <img src="https://img.shields.io/badge/-3278C6?style=flat&logo=Clockify&logoColor=white"/> 프로젝트 기간: 2022. 4. 24. ~ 2023. 5. 9.
 ------------
-### 프로젝트명: 부산 Barrier free 여행 (광안리, 해운대, 기장) 
+### 프로젝트명: 부산 BarrierFree 여행 (광안리, 해운대, 기장) 
 
 ### 1.배경 및 필요성
 - 기존 무장애(Barrier free) 홈페이지 별로 특성 정리가 잘 되어 있지 않음
