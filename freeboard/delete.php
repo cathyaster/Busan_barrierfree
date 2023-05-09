@@ -1,7 +1,7 @@
 <?php
     $num = $_GET["num"];      // 레코드 번호
 
-    $con = mysqli_connect("localhost", "user", "12345", "sample");  
+    $con = mysqli_connect("localhost", "root", "wnql5535", "sample");  
     $sql = "delete from freeboard where num=$num"; // 레코드 삭제 명령
     mysqli_query($con, $sql);     // SQL 명령 실행
 

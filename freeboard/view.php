@@ -4,7 +4,7 @@
 	else 
 		$num = "";
 
-	$con = mysqli_connect("localhost", "user", "12345", "sample");	// DB 접속
+	$con = mysqli_connect("localhost", "root", "wnql5535", "sample");	// DB 접속
 	$sql = "select * from freeboard where num=$num";	// 레코드 검색
 	$result = mysqli_query($con, $sql);			// SQL 명령 실행
 

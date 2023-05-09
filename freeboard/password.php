@@ -3,7 +3,7 @@
     $num = $_GET["num"];            // 레코드 번호
 	$pass = $_POST["pass"];	        // 비밀번호
 
-	$con = mysqli_connect("localhost", "user", "12345", "sample");	// DB 연결
+	$con = mysqli_connect("localhost", "root", "wnql5535", "sample");	// DB 연결
 
 	$sql = "select pass from freeboard where num=$num";    // 레코드 검색
 	$result = mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행

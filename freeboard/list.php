@@ -15,7 +15,7 @@
 			<span class="col4">등록일</span>
 		</li>
 <?php
-	$con = mysqli_connect("localhost", "user", "12345", "sample");		// DB 연결
+	$con = mysqli_connect("localhost", "root", "wnql5535", "sample");		// DB 연결
 	$sql = "select * from freeboard order by num desc";		// 일련번호 내림차순 전체 레코드 검색
 	$result = mysqli_query($con, $sql);			// SQL 명령 실행
 	$total_record = mysqli_num_rows($result); // 전체 글 수

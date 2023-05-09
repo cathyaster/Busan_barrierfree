@@ -8,7 +8,7 @@
 	$content = htmlspecialchars($content, ENT_QUOTES);	// 내용 HTML 특수문자 변환 
 	$regist_day = date("Y-m-d (H:i)");  // UTC 기준 현재의 '년-월-일 (시:분)'
 
-	$con = mysqli_connect("localhost", "user", "12345", "sample");	// DB 연결
+	$con = mysqli_connect("localhost", "root", "wnql5535", "sample");	// DB 연결
 
 	$sql = "insert into freeboard (name, pass, subject, content, regist_day) ";	// 레코드 삽입 명령
 	$sql .= "values('$name', '$pass', '$subject', '$content', '$regist_day')";
